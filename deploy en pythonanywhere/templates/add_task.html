@@ -1,0 +1,26 @@
+{% extends './base.html' %}
+{% block titulo  %}
+Welcome to my app
+{% endblock %}
+
+{% block contenido  %}
+<div>
+    <br>
+    <h3>New Task!</h3>
+    <br>
+    <form action="{{url_for('save_task')}} " method="post">
+        <div class="mb-3">
+            <label for="item" class="form-label">Task:</label>
+            <input type="text" name="item" id="item" class="form-control" placeholder="Tasks for add" required>            
+        </div>
+        <div class="mb-3">  
+            <label for="stat" class="form-label">Stat:</label>
+            <input type="text" name="stat" id="stat" value="Not Started" class="form-control" placeholder="Not Started" readonly>
+        </div>
+        <div class="mb-3">    
+            <button class="btn btn-outline-primary" type="submit">Save</button>
+        </div>
+    </form>
+
+</div>    
+{% endblock %}

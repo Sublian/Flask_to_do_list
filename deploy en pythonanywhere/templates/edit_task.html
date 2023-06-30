@@ -1,0 +1,35 @@
+{% extends './base.html' %}
+{% block titulo  %}
+Welcome to my app
+{% endblock %}
+
+{% block contenido  %}
+<div>
+    <br>
+    <h3>Edit Task!</h3>
+    <br>
+    <form action="{{url_for('update_status')}} " method="post">
+        <div class="mb-3">
+            <label for="item" class="form-label">Task:</label>
+            <input type="text" name="item" id="item" class="form-control"  value="{{item}}" readonly>            
+        </div>
+        <div class="mb-3">  
+            <label for="stat" class="form-label">Stat:</label>
+            <input type="text" name="stat" id="stat" value="{{stat}}" class="form-control" required>
+        </div>
+        <div>
+            <label for="stat" class="form-label">Stat:</label>
+            <select class="form-select" name="stat" id="stat" aria-label="Default select example">
+                <option selected>{{stat}}</option>            
+                <option name="stat" id="stat" value="Not Started">Not Started</option>
+                <option name="stat" id="stat" value="In Progress">In Progress</option>
+                <option name="stat" id="stat" value="Completed">Completed</option> 
+            </select>
+        </div>
+        <div class="mb-3">    
+            <button class="btn btn-outline-primary" type="submit">Save</button>
+        </div>
+    </form>
+
+</div>    
+{% endblock %}
